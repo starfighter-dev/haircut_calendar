@@ -1,0 +1,77 @@
+/* To customise the omni calendar: override these styles, or create a new css file
+   based on this one.
+*/
+
+.calendar-block {
+   box-shadow:  0px 0px 3px #c0c0c0;
+}
+
+.oc-title {
+   text-align: center;
+   font-size: 12pt;
+   color: #000000;
+   padding-top:10px;
+   padding-bottom:10px;
+}
+
+.oc-day-name {
+   background: #40748E;
+   text-align: center;
+   font-weight: normal;
+   color: white;
+   padding-top:10px;
+   padding-bottom:10px;
+}
+
+.oc-daynumber {
+   text-align:center;
+}
+
+.oc-day-active {
+   background: #BBE7E6;
+}
+
+.oc-prev {
+   padding-top:10px;
+   display:none;
+   text-align:left;
+   cursor: pointer;
+}
+
+.oc-next {
+   padding-top:10px;
+   display:none;
+   text-align:right;
+   cursor: pointer;
+}
+
+.oc-table {
+   width: 100%;
+}
+
+.oc-day {
+   vertical-align: middle;
+   padding: 5px;
+   height:60px;
+   width:60px;
+}
+
+.oc-daycontent {
+   font-size: 10pt;
+   text-align: center;
+}
+
+.oc-daycontent-inactive {
+   font-weight: bold;
+   font-size: 10pt;
+   color: #c0c0c0;
+   text-align: center;
+}
+
+.oc-selected {
+   background: #FFCB4F !important;
+}
+
+.oc-hover {
+   background: #FFCB4F !important;
+}

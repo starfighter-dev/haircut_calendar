@@ -1,0 +1,30 @@
+<html>
+   <head>
+      <script
+      src="https://code.jquery.com/jquery-3.4.0.js"
+      integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+      crossorigin="anonymous"></script>
+      <script type="text/javascript" src="../haircut_calendar.js"></script>
+      <link rel="stylesheet" type="text/css" href="../haircut_calendar.css" media="screen">
+   </head>
+
+   <div id="calendar-title">Title</div>
+   <div id="calendar-container"></div>
+   <div id="back">Back</div>
+   <div id="forward">Forward</div>
+
+   <script type="text/javascript">
+   var calendar             = new haircut_calendar('calendar-container');
+   calendar.title_container = 'calendar-title';
+   var highlight_date = 0;
+   calendar.display();
+
+   $('#back').click(function() {
+      calendar.back();
+   });
+   $('#forward').click(function() {
+      calendar.forward();
+   });
+   </script>
+</html>
+
