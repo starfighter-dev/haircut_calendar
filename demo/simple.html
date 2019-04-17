@@ -8,21 +8,24 @@
       <link rel="stylesheet" type="text/css" href="../haircut_calendar.css" media="screen">
    </head>
 
-   <div id="calendar-title">Title</div>
+   <div id="calendar-title" style="width:100%;text-align:center;">Title</div>
+   <div class="hc-back" style="float:left;">Back</div>
+   <div class="hc-next" style="float:right;">Forward</div>
    <div id="calendar-container"></div>
-   <div id="back">Back</div>
-   <div id="forward">Forward</div>
 
    <script type="text/javascript">
-   var calendar             = new haircut_calendar('calendar-container');
-   calendar.title_container = 'calendar-title';
-   var highlight_date = 0;
-   calendar.display();
 
-   $('#back').click(function() {
+   // Create a calendar and define the container
+   var calendar             = new haircut_calendar('calendar-container');
+   calendar.title_container = 'calendar-title'; // If you want a title
+   calendar.display(); // Display the calendar
+
+   // If you want to step through months, set up some buttons and
+   // do something like this with the calendar object.
+   $('.hc-back').click(function() {
       calendar.back();
    });
-   $('#forward').click(function() {
+   $('.hc-next').click(function() {
       calendar.forward();
    });
    </script>

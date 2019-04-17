@@ -1,0 +1,65 @@
+<html>
+   <head>
+      <script
+      src="https://code.jquery.com/jquery-3.4.0.js"
+      integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+      crossorigin="anonymous"></script>
+      <script type="text/javascript" src="../haircut_calendar.js"></script>
+      <link rel="stylesheet" type="text/css" href="../haircut_calendar.css" media="screen">
+   </head>
+
+   <div id="calendar-title" style="width:100%;text-align:center;">Title</div>
+   <div class="hc-prev" style="float:left;">Back</div>
+   <div class="hc-next" style="float:right;">Forward</div>
+   <div id="calendar-container"></div>
+
+   <script type="text/javascript">
+
+   // Create a calendar and define the container
+   var calendar             = new haircut_calendar('calendar-container');
+   calendar.title_container = 'calendar-title'; // If you want a title
+
+   // Set default start date, default to today
+   //calendar.year  = 2019;
+   //calendar.month = 04;
+
+   // Set the earliest date the calendar should display
+   var minmax = new Date();
+   calendar.min_year  = minmax.getYear()+1900;
+   calendar.min_month = minmax.getMonth()+1;
+
+   // Set a max date in the same way
+   minmax.setDate( minmax.getDate() + 365 ); // go a year into the future, Marty
+   calendar.max_year  = minmax.getYear()+1900;
+   calendar.max_month = minmax.getMonth()+1;
+
+   // Make sure we display 3 days after each day in a month
+   // (useful for selecting multiple days, for a hotel stay
+   // or something)
+   calendar.min_days_after = 3;
+
+   calendar.display(); // Display the calendar
+
+   // If you want to step through months, set up some buttons and
+   // do something like this with the calendar object.
+   $('.hc-prev').click(function() {
+      calendar.back();
+      click_trigger();
+   });
+   $('.hc-next').click(function() {
+      calendar.forward();
+      click_trigger();
+   });
+
+   // Click a date and alert the date
+   function click_trigger() {
+      $('.hc-day').click(function() {
+         $(this).addClass('hc-selected');
+         var day = $(this).data('date');
+         alert(day);
+      });
+   }
+   click_trigger();
+   </script>
+</html>
+

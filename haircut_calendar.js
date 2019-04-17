@@ -16,8 +16,8 @@ function haircut_calendar (container) {
    // Set these from your calling code if you want to set certain ranges
    this.min_month      = 0;
    this.min_year       = 0;
-   this.max_month      = 0;
-   this.max_year       = 0;
+   this.max_month      = 12;
+   this.max_year       = 3000;
    this.min_days_after = 0; // Minimum number of days to display after month end
 
    // Set this if you want extra rows before and after
@@ -65,16 +65,16 @@ function haircut_calendar (container) {
    this.check_range = function() {
       if ( this.min_month && this.min_year ) {
          if ( this.min_year == this.year && this.min_month == this.month ) {
-            jQuery(".oc-prev").hide();
+            jQuery(".hc-prev").hide();
          } else {
-            jQuery(".oc-prev").show();
+            jQuery(".hc-prev").show();
          }
       }
       if ( this.max_month && this.max_year ) {
          if ( this.max_year == this.year && this.max_month == this.month ) {
-            jQuery(".oc-next").hide();
+            jQuery(".hc-next").hide();
          } else {
-            jQuery(".oc-next").show();
+            jQuery(".hc-next").show();
          }
       }
    };
@@ -116,12 +116,12 @@ function haircut_calendar (container) {
       if ( this.title_container ) {
          jQuery('#'+this.title_container).html( title );
       } else {
-         html += "<div class='oc-title'>"+title+"</div>";
+         html += "<div class='hc-title'>"+title+"</div>";
       }
 
-      html += "<table class='oc-table'><tr>";
+      html += "<table class='hc-table'><tr>";
       for ( var i = 0 ; i < this.day_names.length ; i++ ) {
-         html += "<th scope='col' class='oc-day-name'>"+this.day_names[i]+"</th>";
+         html += "<th scope='col' class='hc-day-name'>"+this.day_names[i]+"</th>";
       }
       html += "</tr>";
 
@@ -177,16 +177,16 @@ function haircut_calendar (container) {
 
    // Wipe out the display
    this.clear_content = function() {
-      jQuery('.oc-daycontent').html('');
+      jQuery('.hc-daycontent').html('');
    };
 
    // Return a row of days
    this.get_html = function( trooper ) {
-      var ochtml = '';
+      var hchtml = '';
       this.daycnt++;
       if ( this.daycnt > 7 ) {
          this.daycnt = 1;
-         ochtml += "</tr><tr>";
+         hchtml += "</tr><tr>";
       }
 
       // Create an ID so we can trigger stuff
@@ -196,8 +196,8 @@ function haircut_calendar (container) {
       var day = trooper.getDate();
       var active_or_inactive = trooper.getMonth()+1 == this.month ? 'active' : 'inactive';
       var can_tab = trooper.getMonth()+1 == this.month ? 'tabindex=0' : '';
-      ochtml += "<td class='oc-day oc-day-"+active_or_inactive+"' data-date="+id+" id='oc-"+id+"'><div "+can_tab+" role='link' aria-label='"+this.ariaLabel(id)+"' data-aria-label='"+this.ariaLabel(id)+"'><div class='oc-daynumber'>"+day+"</div><div class='oc-daycontent oc-daycontent-'"+active_or_inactive+" id='oc-day-"+id+"'></div></div></td>";
-      return ochtml;
+      hchtml += "<td class='hc-day hc-day-"+active_or_inactive+"' data-date="+id+" id='hc-"+id+"'><div "+can_tab+" role='link' aria-label='"+this.ariaLabel(id)+"' data-aria-label='"+this.ariaLabel(id)+"'><div class='hc-daynumber'>"+day+"</div><div class='hc-daycontent hc-daycontent-'"+active_or_inactive+" id='hc-day-"+id+"'></div></div></td>";
+      return hchtml;
    };
 
    // Return a JS date object from yyyy-mm-dd input

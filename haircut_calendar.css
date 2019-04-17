@@ -6,7 +6,7 @@
    box-shadow:  0px 0px 3px #c0c0c0;
 }
 
-.oc-title {
+.hc-title {
    text-align: center;
    font-size: 12pt;
    color: #000000;
@@ -14,7 +14,7 @@
    padding-bottom:10px;
 }
 
-.oc-day-name {
+.hc-day-name {
    background: #40748E;
    text-align: center;
    font-weight: normal;
@@ -23,55 +23,55 @@
    padding-bottom:10px;
 }
 
-.oc-daynumber {
+.hc-daynumber {
    text-align:center;
 }
 
-.oc-day-active {
+.hc-day-active {
    background: #BBE7E6;
 }
 
-.oc-prev {
+.hc-prev {
    padding-top:10px;
    display:none;
    text-align:left;
    cursor: pointer;
 }
 
-.oc-next {
+.hc-next {
    padding-top:10px;
    display:none;
    text-align:right;
    cursor: pointer;
 }
 
-.oc-table {
+.hc-table {
    width: 100%;
 }
 
-.oc-day {
+.hc-day {
    vertical-align: middle;
    padding: 5px;
    height:60px;
    width:60px;
 }
 
-.oc-daycontent {
+.hc-daycontent {
    font-size: 10pt;
    text-align: center;
 }
 
-.oc-daycontent-inactive {
+.hc-daycontent-inactive {
    font-weight: bold;
    font-size: 10pt;
    color: #c0c0c0;
    text-align: center;
 }
 
-.oc-selected {
+.hc-selected {
    background: #FFCB4F !important;
 }
 
-.oc-hover {
+.hc-hover {
    background: #FFCB4F !important;
 }
