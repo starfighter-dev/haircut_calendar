@@ -126,7 +126,7 @@ function haircut_calendar (container) {
       html += "</tr>";
 
       // Find the first sunday before the first day of the month
-      var trooper = new Date( this.year, this.month - 1, 1 );
+      var trooper = new Date( this.year, this.month - 1, 1, 12, 0, 0 );
       while ( trooper.getDay() != 0 ) {
          trooper.setDate( trooper.getDate() - 1 );
       }
